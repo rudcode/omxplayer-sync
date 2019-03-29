@@ -140,6 +140,7 @@ class OMXPlayerSync():
         p.add_option('--slave', '-l', action='store_true')
         p.add_option('--destination', '-x', default='255.255.255.255')
         p.add_option('--loop', '-u', action='store_true')
+        p.add_option('--orientation', default='0')
         p.add_option('--verbose', '-v', action='store_true')
         p.add_option('--adev', '-o', default='both')
         p.add_option('--aspect', '-a', default=None, help="Aspect Mode - fill, letterbox, stretch")
@@ -166,6 +167,7 @@ class OMXPlayerSync():
 
         self.omxplayer_options.append("-o %s" % self.options.adev)
         self.omxplayer_options.append('--no-keys')
+        self.omxplayer_options.append("--orientation %s" % self.options.orientation)
 
         if not self.options.verbose:
             self.omxplayer_options.append('--no-osd')
