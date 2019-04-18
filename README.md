@@ -23,6 +23,7 @@ Options:
   -v, --verbose         
   -o ADEV, --adev=ADEV  
   -a ASPECT, --aspect=ASPECT  Aspect Mode - fill, letterbox, stretch
+  --orientation ORIENTATION   Orientation - 90, 180, 270
 ```
 
 **Master**
@@ -50,14 +51,10 @@ Installation on Raspbian
 Perform on both master and slave.
 ```
 sudo su
-apt-get remove omxplayer
-rm -rf /usr/bin/omxplayer /usr/bin/omxplayer.bin /usr/lib/omxplayer
 apt-get install libpcre3 fonts-freefont-ttf fbset libssh-4 python3-dbus
-wget http://omxplayer.sconde.net/builds/omxplayer_0.3.7~git20170130~62fb580_armhf.deb
-dpkg -i omxplayer_0.3.7~git20170130~62fb580_armhf.deb
-wget -O /usr/bin/omxplayer-sync https://github.com/turingmachine/omxplayer-sync/raw/master/omxplayer-sync
+wget -O /usr/bin/omxplayer-sync https://github.com/rudcode/omxplayer-sync/raw/master/omxplayer-sync
 chmod 0755 /usr/bin/omxplayer-sync
-wget https://github.com/turingmachine/omxplayer-sync/raw/master/synctest.mp4
+wget https://github.com/rudcode/omxplayer-sync/raw/master/synctest.mp4
 ```
 
 Start on Master (-u loop, -v verbose)
